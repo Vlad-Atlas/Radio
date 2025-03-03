@@ -32,6 +32,7 @@ public class Radio {
     public void prev() {
         currentStation = (currentStation == 0) ? stationCount - 1 : currentStation - 1;
     }
+
     public void increaseVolume() {
         if (currentVolume < 100) {
             currentVolume++;
