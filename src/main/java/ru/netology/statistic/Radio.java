@@ -1,5 +1,8 @@
 package ru.netology.statistic;
 
+import lombok.Getter;
+
+@Getter
 public class Radio {
     private int currentStation;
     private int currentVolume;
@@ -11,7 +14,7 @@ public class Radio {
 
     public Radio(int stationCount) {
         if (stationCount <= 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Количество станций должно быть положительным");
         }
         this.stationCount = stationCount;
     }
@@ -29,7 +32,6 @@ public class Radio {
     public void prev() {
         currentStation = (currentStation == 0) ? stationCount - 1 : currentStation - 1;
     }
-
     public void increaseVolume() {
         if (currentVolume < 100) {
             currentVolume++;
@@ -40,13 +42,5 @@ public class Radio {
         if (currentVolume > 0) {
             currentVolume--;
         }
-    }
-
-    public int getCurrentStation() {
-        return currentStation;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 }
