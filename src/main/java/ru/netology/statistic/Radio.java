@@ -12,8 +12,6 @@ public class Radio {
     private int currentVolume;
     private int stationCount;
 
-
-
     public Radio(int stationCount) {
         if (stationCount <= 0) {
             throw new IllegalArgumentException("Количество станций должно быть положительным");
